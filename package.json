@@ -1,0 +1,24 @@
+{
+  "name": "node_git",
+  "version": "1.0.0",
+  "description": "Initial Testing",
+  "main": "index.html",
+  "scripts": {
+	"start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaiSridhar783/Node_Git.git"
+  },
+  "author": "Akula Sai Sridhar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaiSridhar783/Node_Git/issues"
+  },
+  "homepage": "https://github.com/SaiSridhar783/Node_Git#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
