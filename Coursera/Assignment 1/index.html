@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../node_modules/bootstrap-social/bootstrap-social.css">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <title>Ristorante Con Fusion</title>
     <link rel="icon" type="image/png" href="img/logo.png" />
 </head>
@@ -32,7 +32,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text ml-auto">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a>
                     <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -164,8 +164,7 @@
                 </div>
                 <div class="col-12 col-sm align-self-center mt-4">
                     <a class="btn btn-warning btn-lg"
-                    role="button" data-target="#reserveModal"
-                    data-toggle="modal">
+                    role="button">
                         <strong>Reserve Table</strong>
                     </a>
                 </div>
@@ -264,12 +263,11 @@
                 </div>
                 <div class="col-12 col-sm-4 align-self-center">
                     <div class="text-center">
-                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-google"href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-google" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" target="_blank" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" target="_blank" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" target="_blank" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-google" target="_blank" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-google" target="_blank" href="mailto:nagachika@hideyoshi.com"><i class="fa fa-envelope-o fa-lg"></i></a>
                     </div>
                 </div>
            </div>
@@ -297,6 +295,17 @@
                 $("#carouselButton").children("span").removeClass('fa-play');
                 $("#carouselButton").children("span").addClass('fa-pause');                    
             }
+        });
+    </script>
+    <script>
+        console.log($(".btn.btn-lg"));
+        $(".btn.btn-lg").click(function(){
+           $("#reserveModal").modal();
+        });
+    </script>
+    <script>
+        $(".fa-sign-in").parent().click(function(){
+            $("#loginModal").modal();
         });
     </script>
 </body>
