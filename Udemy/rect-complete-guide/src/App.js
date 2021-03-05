@@ -1,21 +1,7 @@
 import React , { Component } from 'react';
 import './App.css';
-//import Radium from 'radium'; 
-//import Radium, {StyleRoot} from '../node_modules/radium/es/index';
 import Person from './Person/Person';
-import styled from '../node_modules/styled-components/dist/styled-components.cjs';
 
-const StyledButton = styled.button`
-  background-color: ${props => props.alt ? "darkred" : "green"};
-  font-family: 'Bree Serif';
-  border: 1px solid black;
-  padding: 8px;
-  cursor: pointer;
-  color: white;
-  &:hover {
-    background-color: ${props => props.alt ? "salmon" : "lightgreen"};
-    color: black;
-`;
 
 class App extends Component {
   state = {
@@ -113,11 +99,11 @@ class App extends Component {
         <div className="App">
           <h1> Testing React App</h1>
           <p className={classes.join(' ')}> This is really working!!</p>
-          <StyledButton alt={this.state.showPersons}
-          className="btn"
+          <button
+          className="button"
           onClick={this.togglePersonsHandler}>
             Toggle Name 
-          </StyledButton>
+          </button>
 
           {persons}
 

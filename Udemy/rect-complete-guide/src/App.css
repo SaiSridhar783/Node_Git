@@ -9,3 +9,17 @@
 .bold{
   font-weight: bold;
 }
+
+.button{
+  background-color: green;
+  font-family: 'Bree Serif';
+  border: 1px solid black;
+  padding: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.button:hover {
+  background-color: lightgreen;
+  color: black;
+}
