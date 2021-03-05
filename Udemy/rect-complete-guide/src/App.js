@@ -3,7 +3,19 @@ import './App.css';
 //import Radium from 'radium'; 
 //import Radium, {StyleRoot} from '../node_modules/radium/es/index';
 import Person from './Person/Person';
-//import styled from 'styled-componenets';
+import styled from '../node_modules/styled-components/dist/styled-components.cjs';
+
+const StyledButton = styled.button`
+  background-color: ${props => props.alt ? "darkred" : "green"};
+  font-family: 'Bree Serif';
+  border: 1px solid black;
+  padding: 8px;
+  cursor: pointer;
+  color: white;
+  &:hover {
+    background-color: ${props => props.alt ? "salmon" : "lightgreen"};
+    color: black;
+`;
 
 class App extends Component {
   state = {
@@ -56,19 +68,6 @@ class App extends Component {
   }
 
   render(){
-    const style = {
-      backgroundColor: 'green',
-      font: 'Bree Serif',
-      border: '1px solid black',
-      padding: '8px',
-      cursor: 'pointer',
-      color: 'white',
-      ":hover": {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
-    }
-
     let persons = null;
 
     if (this.state.showPersons){
@@ -95,11 +94,11 @@ class App extends Component {
         </div>
       )
 
-      style.backgroundColor = "Red";
+      /* style.backgroundColor = "Red";
       style[":hover"] = {
         backgroundColor: "salmon",
         color: "black"
-      };
+      }; */
     }
 
     const classes = []
@@ -114,12 +113,11 @@ class App extends Component {
         <div className="App">
           <h1> Testing React App</h1>
           <p className={classes.join(' ')}> This is really working!!</p>
-          <button 
+          <StyledButton alt={this.state.showPersons}
           className="btn"
-          style = {style}
           onClick={this.togglePersonsHandler}>
             Toggle Name 
-          </button>
+          </StyledButton>
 
           {persons}
 

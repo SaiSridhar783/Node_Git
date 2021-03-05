@@ -1,7 +1,7 @@
 import React from 'react';
 //import './Person.css';
 //import Radium from '../../node_modules/radium/es/index';
-import styled from '../../node_modules/styled-components/node_modules';
+import styled from '../../node_modules/styled-components/dist/styled-components.cjs';
 
 const StyledDiv = styled.div`
 width: 60%;
