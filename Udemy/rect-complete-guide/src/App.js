@@ -1,6 +1,9 @@
 import React , { Component } from 'react';
 import './App.css';
+//import Radium from 'radium'; 
+//import Radium, {StyleRoot} from '../node_modules/radium/es/index';
 import Person from './Person/Person';
+//import styled from 'styled-componenets';
 
 class App extends Component {
   state = {
@@ -54,12 +57,16 @@ class App extends Component {
 
   render(){
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
       font: 'Bree Serif',
       border: '1px solid black',
       padding: '8px',
       cursor: 'pointer',
-      color: 'black'
+      color: 'white',
+      ":hover": {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
     }
 
     let persons = null;
@@ -87,27 +94,43 @@ class App extends Component {
           })}
         </div>
       )
+
+      style.backgroundColor = "Red";
+      style[":hover"] = {
+        backgroundColor: "salmon",
+        color: "black"
+      };
+    }
+
+    const classes = []
+    if (this.state.persons.length <=2){
+      classes.push('red');
+    }
+    if (this.state.persons.length <=1){
+      classes.push('bold');
     }
 
     return (
-      <div className="App">
-        <h1> Testing React App</h1>
-        {persons}
-        <button 
-        className="btn"
-        style = {style}
-        onClick={this.togglePersonsHandler}>
-           Toggle Name 
-        </button>
+        <div className="App">
+          <h1> Testing React App</h1>
+          <p className={classes.join(' ')}> This is really working!!</p>
+          <button 
+          className="btn"
+          style = {style}
+          onClick={this.togglePersonsHandler}>
+            Toggle Name 
+          </button>
 
-        {/*  //This way of passing arguements to function is inefficient 
-        <button 
-        className="btn"
-        style = {style}
-        onClick={() => this.switchNameHandler("Bunta")}>
-           Switch Name 
-        </button> */}
-      </div>
+          {persons}
+
+          {/*  //This way of passing arguements to function is inefficient 
+          <button 
+          className="btn"
+          style = {style}
+          onClick={() => this.switchNameHandler("Bunta")}>
+            Switch Name 
+          </button> */}
+        </div>
     );
   };
   
